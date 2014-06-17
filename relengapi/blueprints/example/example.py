@@ -2,6 +2,9 @@ from flask import (
     Blueprint,
     render_template
 )
+from flask.ext.login import (
+    login_required
+)
 # from relengapi import p, db...
 
 bp = Blueprint('example', __name__, template_folder='templates',
@@ -12,3 +15,9 @@ bp.root_widget_template('example-root-widget.html')
 @bp.route('/')
 def root():
     return render_template('example-index.html')
+
+
+@bp.route('/needlogin')
+@login_required
+def need_login():
+    return "If you're seeing this then you're logged in!", 200
