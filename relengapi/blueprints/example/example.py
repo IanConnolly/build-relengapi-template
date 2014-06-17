@@ -6,6 +6,7 @@ from flask import (
 
 bp = Blueprint('example', __name__, template_folder='templates',
                static_folder='static')
+bp.root_widget_template('example-root-widget.html')
 
 
 @bp.route('/')
