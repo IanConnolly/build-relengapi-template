@@ -15,6 +15,31 @@ for any new Releng API services.
 * ```relengapi serve```
 
 
+### Setting up authentication &amp; permissions
+
+Some auth is simple binary, logged in-or-out logic. This is provided by the
+```login_required``` decorator from ```flask.ext.login```. You can see it in use
+at the ```/example/needlogin``` endpoint.
+
+Granular access-level permissions are handled by Flask-Principal.
+You can see an example of creating a permission with the ```/example/needpermission```
+endpoint. To give yourself access to this endpoint you'll need to edit
+```settings.py``` pointed to by ```$RELENGAPI_SETTINGS```.
+The ```RELENGAPI_PERMISSIONS``` should look similar to the below:
+
+```
+RELENGAPI_PERMISSIONS = {
+    'type': 'static',
+    'permissions': {
+        'iconnolly@mozilla.com': ['example.view.perm_example'],
+    },
+}
+```
+
+More documentation on authentication in Releng API blueprints can be gotten
+[here]("https://api.pub.build.mozilla.org/docs/development/@relengapi/auth/").
+
+
 ### Relengapi Documentation
 
 More detailed information on the Mozilla Releng API can be found in its
@@ -24,5 +49,4 @@ can be found in its [documentation](https://api.pub.build.mozilla.org/docs/).
 
 #### TODO
 
-* Authentication Example
 * Database Example

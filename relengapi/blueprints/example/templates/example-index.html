@@ -9,8 +9,15 @@
     <div id="text">
         <h3>Mozilla Releng API Example Blueprint</h3>
         <div id="main">
-            <p>This is an example blueprint for Mozilla Release Engineering's API. For information on how to add additional functionality, please see the Mozilla Releng API Documentation <a href="https://api.pub.build.mozilla.org/docs/">here</a></p>
-            <p>A User does not need to be logged in to see this page. They do need to be logged in to see <a href="{{ url_for('example.need_login') }}">this</a>.</p>
+            <p>This is an example blueprint for Mozilla Release Engineering's
+               API. For information on how to add additional functionality,
+               please see the Mozilla Releng API Documentation
+               <a href="https://api.pub.build.mozilla.org/docs/"> here</a></p>
+            <p>A User does not need to be logged in to see this page.
+               They do need to be logged in to see
+               <a href="{{ url_for('example.need_login') }}">this</a>
+               and they need special permission to see
+               <a href="{{ url_for('example.need_permission') }}">this.</a></p>
         </div>
     </div>
 </body>
