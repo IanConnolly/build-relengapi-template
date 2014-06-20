@@ -1,0 +1,3 @@
+recursive-include relengapi/blueprints/example/templates *.html
+recursive-include relengapi/blueprints/example/static *.js
+recursive-include relengapi/blueprints/example/static *.css
